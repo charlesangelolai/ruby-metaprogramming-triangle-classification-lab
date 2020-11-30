@@ -10,7 +10,6 @@ class Triangle
   end
 
   def kind
-    binding.pry
     raise TriangleError if sides.any? {|num| num <= 0} || triangle_inequality?
     #triangle_inequality?
 
@@ -28,7 +27,7 @@ class Triangle
     a = sides[0]
     b = sides[1]
     c = sides[2]
-    a + b > c || b + c > a || c + a > b ? true : false
+    a + b <= c || b + c <= a || c + a <= b ? true : false
     #triangles = [a + b > c, b + c > a, c + a > b]
     #triangles << sides.any? {|num| num <= 0}
     #raise TriangleError if triangles.include?(false)
